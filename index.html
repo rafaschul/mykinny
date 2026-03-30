@@ -1,19 +1,1190 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mykinny</title>
-  <style>
-    body{font-family:Arial,sans-serif;display:grid;place-items:center;height:100vh;margin:0;background:#f6f7fb;color:#111}
-    .card{background:#fff;padding:24px 28px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>myKinny &#x1F437; &#x2014; KI-Kartenterminal Vergleich Deutschland 2026</title>
+<meta name="description" content="Vergleiche 11 Kartenterminal-Anbieter in Deutschland. Kostenlos, unabhaengig, kein Risiko. Spare bis zu 60% bei den Gebuehren." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;900&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --pink: #E8175D;
+  --green: #00B341;
+  --bg: #FFF5F9;
+  --card-bg: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #6b7280;
+  --border: #f0d6e4;
+  --nav-bg: #ffffff;
+  --shadow: 0 4px 24px rgba(232,23,93,0.08);
+  --amber-bg: #fffbeb;
+  --amber-border: #fcd34d;
+}
+[data-theme="dark"] {
+  --bg: #0f0a12;
+  --card-bg: #1a1025;
+  --text: #f0e6f6;
+  --text-muted: #9ca3af;
+  --border: #2d1f3a;
+  --nav-bg: #130e1c;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  --amber-bg: #1c1700;
+  --amber-border: #92400e;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Figtree', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 12px rgba(232,23,93,0.06);
+}
+.nav-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; gap: 1rem;
+  flex-wrap: wrap; padding: 0.75rem 0;
+}
+.nav-logo {
+  font-size: 1.4rem; font-weight: 900; color: var(--pink);
+  text-decoration: none; white-space: nowrap;
+}
+.trust-badges {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; flex: 1;
+}
+.trust-badge {
+  font-size: 0.72rem; font-weight: 600; color: var(--text-muted);
+  background: var(--bg); border: 1px solid var(--border);
+  padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap;
+}
+.nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+.btn-nav {
+  background: var(--pink); color: #fff;
+  border: none; border-radius: 24px;
+  padding: 0.5rem 1.1rem; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-nav:hover { opacity: 0.88; }
+.dark-toggle {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 50%; width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1rem; transition: background 0.2s;
+}
+.dark-toggle:hover { background: var(--border); }
+
+/* ===== HERO ===== */
+.hero {
+  text-align: center; padding: 4rem 1.5rem 3rem;
+  max-width: 720px; margin: 0 auto;
+}
+.pig-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--pink); color: #fff;
+  padding: 0.35rem 1rem; border-radius: 20px;
+  font-size: 0.8rem; font-weight: 700; margin-bottom: 1.5rem;
+  animation: pulse-badge 2s infinite;
+}
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 900;
+  line-height: 1.2; margin-bottom: 1.5rem; color: var(--text);
+}
+.hl { color: var(--pink); }
+.savings-flash {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: linear-gradient(135deg, #fff0f5, #ffe0ec);
+  border: 2px solid var(--pink); border-radius: 12px;
+  padding: 0.75rem 1.5rem; margin-bottom: 1.75rem;
+  font-size: 1.1rem; font-weight: 700; color: var(--pink);
+}
+[data-theme="dark"] .savings-flash {
+  background: linear-gradient(135deg, #2a0a15, #1f0510);
+}
+.savings-flash .flash-amount { font-size: 1.4rem; font-weight: 900; }
+.btn-hero {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--pink); color: #fff;
+  border: none; border-radius: 32px;
+  padding: 1rem 2rem; font-size: 1.05rem; font-weight: 700;
+  cursor: pointer; text-decoration: none;
+  box-shadow: 0 8px 28px rgba(232,23,93,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 1rem;
+}
+.btn-hero:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(232,23,93,0.42); }
+.hero-micro {
+  font-size: 0.78rem; color: var(--text-muted); font-weight: 600;
+}
+.hero-micro span { margin: 0 0.4rem; }
+
+/* ===== PROOF BAR ===== */
+.proof-bar {
+  background: var(--pink); color: #fff;
+  padding: 1.25rem 1.5rem;
+}
+.proof-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0;
+}
+.proof-item {
+  text-align: center; padding: 0.5rem 1.5rem;
+  border-right: 1px solid rgba(255,255,255,0.25);
+  min-width: 160px;
+}
+.proof-item:last-child { border-right: none; }
+.proof-num { font-size: 1.6rem; font-weight: 900; display: block; }
+.proof-label { font-size: 0.78rem; font-weight: 600; opacity: 0.9; }
+
+/* ===== SECTION WRAPPER ===== */
+.section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+.section-title {
+  font-size: 1.5rem; font-weight: 900; margin-bottom: 0.4rem; color: var(--text);
+}
+.section-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+/* ===== CALCULATOR ===== */
+.calc-box {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.75rem;
+  box-shadow: var(--shadow);
+}
+.calc-inputs { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+.calc-field { flex: 1; min-width: 200px; }
+.calc-field label {
+  display: block; font-size: 0.82rem; font-weight: 700;
+  color: var(--text-muted); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.calc-field input {
+  width: 100%; padding: 0.75rem 1rem;
+  border: 2px solid var(--border); border-radius: 10px;
+  background: var(--bg); color: var(--text);
+  font-family: inherit; font-size: 1.05rem; font-weight: 700;
+  transition: border-color 0.2s;
+}
+.calc-field input:focus { outline: none; border-color: var(--pink); }
+.calc-results {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  background: var(--bg); border-radius: 10px; padding: 1rem;
+}
+.calc-result-item { flex: 1; min-width: 130px; text-align: center; }
+.calc-result-item .label {
+  font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;
+}
+.calc-result-item .value {
+  font-size: 1.35rem; font-weight: 900;
+}
+.calc-result-item.current .value { color: var(--text); }
+.calc-result-item.best .value { color: var(--green); }
+.calc-result-item.save .value { color: var(--pink); }
+.btn-calc {
+  display: block; width: 100%; margin-top: 1.25rem;
+  background: var(--green); color: #fff;
+  border: none; border-radius: 12px;
+  padding: 0.9rem; font-size: 1rem; font-weight: 700;
+  cursor: pointer; transition: opacity 0.2s;
+}
+.btn-calc:hover { opacity: 0.88; }
+
+/* ===== FILTER ===== */
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.filter-pill {
+  padding: 0.4rem 1rem; border-radius: 20px;
+  border: 2px solid var(--border); background: var(--card-bg);
+  color: var(--text-muted); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s;
+}
+.filter-pill.active, .filter-pill:hover {
+  border-color: var(--pink); color: var(--pink);
+  background: rgba(232,23,93,0.06);
+}
+
+/* ===== CARDS GRID ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+.provider-card {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.4rem;
+  box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s;
+  display: flex; flex-direction: column; gap: 0.85rem;
+}
+.provider-card:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(232,23,93,0.12); }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
+.card-icon {
+  width: 48px; height: 48px; border-radius: 10px;
+  background: var(--bg); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0;
+}
+.card-title-group { flex: 1; }
+.card-name { font-size: 1.05rem; font-weight: 900; color: var(--text); }
+.card-subtitle { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.1rem; }
+.card-badge {
+  font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.6rem;
+  border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+}
+.badge-kinny { background: #fff0f5; color: var(--pink); border: 1px solid var(--pink); }
+.badge-popular { background: #f0fdf4; color: var(--green); border: 1px solid var(--green); }
+.badge-offer { background: #fffbeb; color: #d97706; border: 1px solid #fcd34d; }
+[data-theme="dark"] .badge-kinny { background: #2a0a15; }
+[data-theme="dark"] .badge-popular { background: #022c14; }
+[data-theme="dark"] .badge-offer { background: #1c1700; }
+
+.cost-hero {
+  background: var(--bg); border-radius: 10px;
+  padding: 0.75rem 1rem; text-align: center;
+}
+.cost-hero .cost-label {
+  font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.cost-hero .cost-value {
+  font-size: 1.5rem; font-weight: 900; color: var(--text); margin-top: 0.15rem;
+}
+.cost-hero .cost-sub { font-size: 0.72rem; color: var(--text-muted); }
+
+.card-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;
+}
+.card-stat {
+  background: var(--bg); border-radius: 8px; padding: 0.5rem 0.65rem;
+}
+.card-stat .stat-label {
+  font-size: 0.65rem; font-weight: 700; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.card-stat .stat-val { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-top: 0.1rem; }
+
+.card-features { display: flex; flex-direction: column; gap: 0.3rem; }
+.card-feature {
+  font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 0.4rem;
+}
+.card-feature::before { content: "\2713"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+.card-feature.warn::before { content: "\26A0"; color: #d97706; }
+.card-feature.warn { color: #d97706; }
+
+.card-cta { margin-top: auto; }
+.btn-card-green {
+  display: block; width: 100%;
+  background: var(--green); color: #fff;
+  border: none; border-radius: 10px;
+  padding: 0.7rem 1rem; font-size: 0.88rem; font-weight: 700;
+  cursor: pointer; text-align: center; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-card-green:hover { opacity: 0.88; }
+.btn-card-pink {
+  display: block; width: 100%;
+  background: var(--pink); color: #fff;
+  border: none; border-radius: 10px;
+  padding: 0.7rem 1rem; font-size: 0.88rem; font-weight: 700;
+  cursor: pointer; text-align: center; text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-card-pink:hover { opacity: 0.88; }
+
+/* ===== DISCLAIMER ===== */
+.disclaimer {
+  background: var(--amber-bg); border: 1px solid var(--amber-border);
+  border-radius: 12px; padding: 1.1rem 1.4rem;
+  font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;
+}
+.disclaimer strong { color: var(--text); }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.55); backdrop-filter: blur(4px);
+  align-items: center; justify-content: center; padding: 1.5rem;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--card-bg); border-radius: 18px;
+  padding: 2rem; max-width: 480px; width: 100%;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; }
+.modal-title { font-size: 1.2rem; font-weight: 900; color: var(--text); }
+.modal-close {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 50%; width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1rem; color: var(--text-muted);
+}
+.modal-close:hover { background: var(--border); }
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+  display: block; font-size: 0.8rem; font-weight: 700;
+  color: var(--text-muted); margin-bottom: 0.35rem;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.form-group input, .form-group select {
+  width: 100%; padding: 0.7rem 0.9rem;
+  border: 2px solid var(--border); border-radius: 9px;
+  background: var(--bg); color: var(--text);
+  font-family: inherit; font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.form-group input:focus, .form-group select:focus { outline: none; border-color: var(--pink); }
+.btn-submit {
+  width: 100%; padding: 0.85rem;
+  background: var(--pink); color: #fff;
+  border: none; border-radius: 10px;
+  font-size: 1rem; font-weight: 700; cursor: pointer;
+  transition: opacity 0.2s; margin-top: 0.5rem;
+}
+.btn-submit:hover { opacity: 0.88; }
+
+/* ===== CHAT FAB ===== */
+.chat-fab {
+  position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 150;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--pink); color: #fff;
+  border: none; font-size: 1.7rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; box-shadow: 0 8px 24px rgba(232,23,93,0.4);
+  animation: fab-pulse 2.5s infinite;
+}
+@keyframes fab-pulse {
+  0%, 100% { box-shadow: 0 8px 24px rgba(232,23,93,0.4), 0 0 0 0 rgba(232,23,93,0.4); }
+  50% { box-shadow: 0 8px 24px rgba(232,23,93,0.4), 0 0 0 12px rgba(232,23,93,0); }
+}
+.chat-window {
+  display: none; position: fixed; bottom: 5.5rem; right: 1.75rem; z-index: 150;
+  width: 340px; max-height: 460px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 18px; box-shadow: 0 16px 48px rgba(0,0,0,0.18);
+  flex-direction: column; overflow: hidden;
+}
+.chat-window.open { display: flex; }
+.chat-header {
+  background: var(--pink); color: #fff;
+  padding: 0.85rem 1rem; display: flex; align-items: center; gap: 0.6rem;
+}
+.chat-header-title { font-weight: 700; font-size: 0.95rem; }
+.chat-header-sub { font-size: 0.72rem; opacity: 0.85; }
+.chat-close-btn {
+  margin-left: auto; background: none; border: none;
+  color: #fff; font-size: 1.2rem; cursor: pointer; opacity: 0.8;
+}
+.chat-messages {
+  flex: 1; overflow-y: auto; padding: 1rem;
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.chat-msg {
+  max-width: 88%; padding: 0.55rem 0.85rem;
+  border-radius: 14px; font-size: 0.85rem; line-height: 1.5;
+}
+.chat-msg.bot {
+  background: var(--bg); color: var(--text);
+  border-bottom-left-radius: 4px; align-self: flex-start;
+}
+.chat-msg.user {
+  background: var(--pink); color: #fff;
+  border-bottom-right-radius: 4px; align-self: flex-end;
+}
+.chat-msg-time {
+  font-size: 0.65rem; color: var(--text-muted); margin-top: 0.15rem;
+}
+.typing-indicator {
+  display: flex; gap: 4px; padding: 0.55rem 0.85rem;
+  background: var(--bg); border-radius: 14px; border-bottom-left-radius: 4px;
+  align-self: flex-start; width: 52px;
+}
+.typing-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--text-muted); animation: typing 1.2s infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+.chat-input-row {
+  display: flex; gap: 0.5rem; padding: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+.chat-input {
+  flex: 1; padding: 0.55rem 0.85rem;
+  border: 2px solid var(--border); border-radius: 20px;
+  background: var(--bg); color: var(--text);
+  font-family: inherit; font-size: 0.85rem;
+}
+.chat-input:focus { outline: none; border-color: var(--pink); }
+.chat-send {
+  background: var(--pink); color: #fff;
+  border: none; border-radius: 50%; width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 1rem; flex-shrink: 0;
+  transition: opacity 0.2s;
+}
+.chat-send:hover { opacity: 0.88; }
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--card-bg); border-top: 1px solid var(--border);
+  padding: 2.5rem 1.5rem; margin-top: 3rem;
+}
+.footer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  text-align: center;
+}
+.footer-logo { font-size: 1.3rem; font-weight: 900; color: var(--pink); }
+.footer-tagline { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; }
+.footer-links { display: flex; gap: 1.25rem; }
+.footer-links a { font-size: 0.82rem; color: var(--text-muted); text-decoration: none; }
+.footer-links a:hover { color: var(--pink); }
+.footer-copy { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .proof-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.25); }
+  .proof-item:last-child { border-bottom: none; }
+  .chat-window { width: calc(100vw - 2rem); right: 1rem; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>mykinny is live ✅</h1>
-    <p>Initial deploy trigger commit.</p>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">myKinny &#x1F437;</a>
+    <div class="trust-badges">
+      <span class="trust-badge">&#x2713; Kostenlos</span>
+      <span class="trust-badge">&#x2713; Unabh&auml;ngig</span>
+      <span class="trust-badge">&#x2713; Kein Risiko</span>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-nav" onclick="scrollToCalc()">Jetzt sparen &#x27A1;</button>
+      <button class="dark-toggle" id="themeToggle" title="Dark Mode" onclick="toggleTheme()">&#x1F319;</button>
+    </div>
   </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="pig-badge">&#x1F437; KI-Vergleich 2026 &mdash; 11 Anbieter</div>
+  <h1>Zahlst du noch zu viel<br>f&uuml;r dein <span class="hl">Kartenterminal?</span></h1>
+  <div class="savings-flash">
+    <span>&#x1F4B0;</span>
+    <span><span class="flash-amount" id="heroSavings">&euro;183</span> Ersparnis pro Monat m&ouml;glich</span>
+  </div>
+  <button class="btn-hero" onclick="scrollToCalc()">&#x1F437; Meinen Vergleich starten</button>
+  <div class="hero-micro">
+    <span>Keine Registrierung</span>&middot;<span>100% kostenlos</span>&middot;<span>Ergebnis in 60 Sekunden</span>
+  </div>
+</section>
+
+<!-- ===== PROOF BAR ===== -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <div class="proof-item"><span class="proof-num">11</span><span class="proof-label">Anbieter verglichen</span></div>
+    <div class="proof-item"><span class="proof-num">&euro;0</span><span class="proof-label">Kosten f&uuml;r dich</span></div>
+    <div class="proof-item"><span class="proof-num">60s</span><span class="proof-label">bis zum Ergebnis</span></div>
+    <div class="proof-item"><span class="proof-num">bis 60%</span><span class="proof-label">Geb&uuml;hr sparen</span></div>
+  </div>
+</div>
+
+<!-- ===== CALCULATOR ===== -->
+<div class="section" id="rechner">
+  <div class="section-title">&#x1F9EE; Dein pers&ouml;nliches Einsparpotenzial</div>
+  <div class="section-sub">Gib deinen monatlichen Kartenumsatz ein &mdash; wir zeigen dir, was du sparen kannst.</div>
+  <div class="calc-box">
+    <div class="calc-inputs">
+      <div class="calc-field">
+        <label for="umsatz">Monatlicher Kartenumsatz (&euro;)</label>
+        <input type="number" id="umsatz" value="20000" min="1000" max="500000" oninput="calcAll()" />
+      </div>
+      <div class="calc-field">
+        <label for="currentFee">Aktuelle Geb&uuml;hr (%)</label>
+        <input type="number" id="currentFee" value="1.75" min="0.1" max="5" step="0.01" oninput="calcAll()" />
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-item current">
+        <div class="label">Aktuelle Kosten/Monat</div>
+        <div class="value" id="calcCurrent">&euro;350</div>
+      </div>
+      <div class="calc-result-item best">
+        <div class="label">Bestes Angebot</div>
+        <div class="value" id="calcBest">&euro;168</div>
+      </div>
+      <div class="calc-result-item save">
+        <div class="label">Deine Ersparnis</div>
+        <div class="value" id="calcSave">&euro;183</div>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="scrollToCards()">Jetzt das beste Terminal finden &#x27A1;</button>
+  </div>
+</div>
+
+<!-- ===== FILTER ===== -->
+<div class="section" id="cards" style="padding-bottom:0">
+  <div class="section-title">&#x1F3C6; Alle 11 Kartenterminal-Anbieter</div>
+  <div class="section-sub">Berechnet auf Basis deines Umsatzes. Live-Aktualisierung beim &Auml;ndern der Eingaben.</div>
+  <div class="filter-bar">
+    <button class="filter-pill active" onclick="filterCards('all', this)">Alle anzeigen</button>
+    <button class="filter-pill" onclick="filterCards('aff', this)">Sofort online kaufen</button>
+    <button class="filter-pill" onclick="filterCards('iso', this)">Angebot anfordern</button>
+  </div>
+</div>
+
+<!-- ===== CARDS GRID ===== -->
+<div class="section" style="padding-top:0.5rem">
+  <div class="cards-grid" id="cardsGrid">
+
+    <!-- Revolut Reader -->
+    <div class="provider-card" data-type="aff" data-id="revolut">
+      <div class="card-header">
+        <div class="card-icon">&#x1F4B3;</div>
+        <div class="card-title-group">
+          <div class="card-name">Revolut Reader</div>
+          <div class="card-subtitle">0,8% + &euro;0,02 pro Transaktion</div>
+        </div>
+        <span class="card-badge badge-kinny">Kinny Tipp &#x1F437;</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-revolut">&euro;168</div>
+        <div class="cost-sub">inkl. aller Geb&uuml;hren</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">0,8% + 2ct</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">&euro;0</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">ab &euro;69</div></div>
+        <div class="card-stat"><div class="stat-label">Auszahlung</div><div class="stat-val">1&ndash;2 Tage</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Keine Monatsgeb&uuml;hr</span>
+        <span class="card-feature">Apple Pay &amp; Google Pay</span>
+        <span class="card-feature warn">Revolut Business-Konto ben&ouml;tigt</span>
+      </div>
+      <div class="card-cta">
+        <a class="btn-card-green" href="https://www.revolut.com/de-DE/business/revolut-reader/" target="_blank" rel="noopener">Direkt bei Revolut bestellen &#x27A1;</a>
+      </div>
+    </div>
+
+    <!-- myPOS -->
+    <div class="provider-card" data-type="aff" data-id="mypos">
+      <div class="card-header">
+        <div class="card-icon">&#x1F4F1;</div>
+        <div class="card-title-group">
+          <div class="card-name">myPOS</div>
+          <div class="card-subtitle">1,20% pro Transaktion</div>
+        </div>
+        <span class="card-badge badge-popular">Beliebt</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-mypos">&euro;240</div>
+        <div class="cost-sub">inkl. aller Geb&uuml;hren</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">1,20%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">&euro;0</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">ab &euro;39</div></div>
+        <div class="card-stat"><div class="stat-label">Auszahlung</div><div class="stat-val">sofort</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Eigenes Business-Konto inklusive</span>
+        <span class="card-feature">&Uuml;ber 30 Zahlungsmethoden</span>
+        <span class="card-feature warn">Eigenes Konto, kein direkter SEPA-Empfang</span>
+      </div>
+      <div class="card-cta">
+        <a class="btn-card-green" href="https://perf.mypos.com/affiliates" target="_blank" rel="noopener">Jetzt zu myPOS &#x27A1;</a>
+      </div>
+    </div>
+
+    <!-- Flatpay -->
+    <div class="provider-card" data-type="aff" data-id="flatpay">
+      <div class="card-header">
+        <div class="card-icon">&#x26A1;</div>
+        <div class="card-title-group">
+          <div class="card-name">Flatpay</div>
+          <div class="card-subtitle">1,29% &mdash; Terminal gratis</div>
+        </div>
+        <span class="card-badge badge-popular">Terminal gratis</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-flatpay">&euro;258</div>
+        <div class="cost-sub">inkl. aller Geb&uuml;hren</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">1,29%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">&euro;0</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">gratis</div></div>
+        <div class="card-stat"><div class="stat-label">Auszahlung</div><div class="stat-val">1 Tag</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Terminal gratis erhalten</span>
+        <span class="card-feature">Kontaktlos, Chip &amp; PIN, Tap to Pay</span>
+        <span class="card-feature warn">Nur f&uuml;r Deutschland verf&uuml;gbar</span>
+      </div>
+      <div class="card-cta">
+        <a class="btn-card-green" href="https://www.flatpay.com/de" target="_blank" rel="noopener">Jetzt zu Flatpay &#x27A1;</a>
+      </div>
+    </div>
+
+    <!-- SumUp -->
+    <div class="provider-card" data-type="aff" data-id="sumup">
+      <div class="card-header">
+        <div class="card-icon">&#x1F535;</div>
+        <div class="card-title-group">
+          <div class="card-name">SumUp</div>
+          <div class="card-subtitle">1,69% pro Transaktion</div>
+        </div>
+        <span class="card-badge badge-popular">Marktf&uuml;hrer</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-sumup">&euro;338</div>
+        <div class="cost-sub">inkl. aller Geb&uuml;hren</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">1,69%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">&euro;0</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">ab &euro;39</div></div>
+        <div class="card-stat"><div class="stat-label">Auszahlung</div><div class="stat-val">1&ndash;3 Tage</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Marktf&uuml;hrer in Deutschland</span>
+        <span class="card-feature">Kassenintegration m&ouml;glich</span>
+        <span class="card-feature warn">H&ouml;here Geb&uuml;hr als Wettbewerber</span>
+      </div>
+      <div class="card-cta">
+        <a class="btn-card-green" href="https://sumup.postaffiliatepro.com/affiliates/signup.php" target="_blank" rel="noopener">Jetzt zu SumUp &#x27A1;</a>
+      </div>
+    </div>
+
+    <!-- Zettle -->
+    <div class="provider-card" data-type="aff" data-id="zettle">
+      <div class="card-header">
+        <div class="card-icon">&#x1F537;</div>
+        <div class="card-title-group">
+          <div class="card-name">Zettle by PayPal</div>
+          <div class="card-subtitle">1,75% pro Transaktion</div>
+        </div>
+        <span class="card-badge badge-popular">PayPal &Ouml;kosystem</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-zettle">&euro;350</div>
+        <div class="cost-sub">inkl. aller Geb&uuml;hren</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">1,75%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">&euro;0</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">ab &euro;79</div></div>
+        <div class="card-stat"><div class="stat-label">Auszahlung</div><div class="stat-val">1&ndash;2 Tage</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">PayPal-Integration inklusive</span>
+        <span class="card-feature">Kostenlose Kassen-App</span>
+        <span class="card-feature warn">Konto-Sperrungen bekannt bei R&uuml;ckbuchungen</span>
+      </div>
+      <div class="card-cta">
+        <a class="btn-card-green" href="https://www.zettle.com/de/partner/affiliate-programm" target="_blank" rel="noopener">Jetzt zu Zettle &#x27A1;</a>
+      </div>
+    </div>
+
+    <!-- PAYONE -->
+    <div class="provider-card" data-type="iso" data-id="payone">
+      <div class="card-header">
+        <div class="card-icon">&#x1F3E2;</div>
+        <div class="card-title-group">
+          <div class="card-name">PAYONE</div>
+          <div class="card-subtitle">ca. 0,69% + &euro;29/Monat</div>
+        </div>
+        <span class="card-badge badge-offer">&#x1F4CB; Angebot anfordern</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-payone">&euro;167</div>
+        <div class="cost-sub">inkl. Monatsgeb&uuml;hr (Richtwert)</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">~0,69%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">ab &euro;29</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">Miete/Kauf</div></div>
+        <div class="card-stat"><div class="stat-label">Support</div><div class="stat-val">24/7</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Deutschlands gr&ouml;&szlig;ter PSP</span>
+        <span class="card-feature">Omnichannel (online + station&auml;r)</span>
+        <span class="card-feature warn">Monatsgeb&uuml;hr lohnt sich erst ab ~&euro;5.000/Monat</span>
+      </div>
+      <div class="card-cta">
+        <button class="btn-card-pink" onclick="openModal('PAYONE')">Kostenloses Angebot anfordern &#x27A1;</button>
+      </div>
+    </div>
+
+    <!-- Nexi/Concardis -->
+    <div class="provider-card" data-type="iso" data-id="nexi">
+      <div class="card-header">
+        <div class="card-icon">&#x1F3E6;</div>
+        <div class="card-title-group">
+          <div class="card-name">Nexi / Concardis</div>
+          <div class="card-subtitle">ca. 0,79% + &euro;19/Monat</div>
+        </div>
+        <span class="card-badge badge-offer">&#x1F4CB; Angebot anfordern</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-nexi">&euro;177</div>
+        <div class="cost-sub">inkl. Monatsgeb&uuml;hr (Richtwert)</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">~0,79%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">ab &euro;19</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">Miete/Kauf</div></div>
+        <div class="card-stat"><div class="stat-label">Vertrag</div><div class="stat-val">individuell</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Bankenseitige Abrechnung</span>
+        <span class="card-feature">Alle g&auml;ngigen Kartensysteme</span>
+        <span class="card-feature warn">Individuelle Konditionen &mdash; Verhandlung n&ouml;tig</span>
+      </div>
+      <div class="card-cta">
+        <button class="btn-card-pink" onclick="openModal('Nexi/Concardis')">Kostenloses Angebot anfordern &#x27A1;</button>
+      </div>
+    </div>
+
+    <!-- Worldline -->
+    <div class="provider-card" data-type="iso" data-id="worldline">
+      <div class="card-header">
+        <div class="card-icon">&#x1F30D;</div>
+        <div class="card-title-group">
+          <div class="card-name">Worldline</div>
+          <div class="card-subtitle">ca. 0,59% + &euro;39/Monat</div>
+        </div>
+        <span class="card-badge badge-offer">&#x1F4CB; Angebot anfordern</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-worldline">&euro;157</div>
+        <div class="cost-sub">inkl. Monatsgeb&uuml;hr (Richtwert)</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Geb&uuml;hr</div><div class="stat-val">~0,59%</div></div>
+        <div class="card-stat"><div class="stat-label">Monatsgeb&uuml;hr</div><div class="stat-val">ab &euro;39</div></div>
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">Miete</div></div>
+        <div class="card-stat"><div class="stat-label">Profil</div><div class="stat-val">Enterprise</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Europ&auml;ischer Zahlungsdienstleister</span>
+        <span class="card-feature">Geeignet f&uuml;r hohe Ums&auml;tze</span>
+        <span class="card-feature warn">Hohe Monatsgeb&uuml;hr bei geringem Umsatz</span>
+      </div>
+      <div class="card-cta">
+        <button class="btn-card-pink" onclick="openModal('Worldline')">Kostenloses Angebot anfordern &#x27A1;</button>
+      </div>
+    </div>
+
+    <!-- Ingenico -->
+    <div class="provider-card" data-type="iso" data-id="ingenico">
+      <div class="card-header">
+        <div class="card-icon">&#x1F5A5;&#xFE0F;</div>
+        <div class="card-title-group">
+          <div class="card-name">Ingenico Terminal</div>
+          <div class="card-subtitle">Einmalkauf ~&euro;180 + Acquiring</div>
+        </div>
+        <span class="card-badge badge-offer">&#x1F4CB; Angebot anfordern</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-ingenico">nach Angebot</div>
+        <div class="cost-sub">Acquiring-Geb&uuml;hr individuell</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">~&euro;180 (Kauf)</div></div>
+        <div class="card-stat"><div class="stat-label">Acquiring</div><div class="stat-val">individuell</div></div>
+        <div class="card-stat"><div class="stat-label">Standard</div><div class="stat-val">PCI PTS</div></div>
+        <div class="card-stat"><div class="stat-label">Profil</div><div class="stat-val">KMU/Enterprise</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Marktf&uuml;hrer bei POS-Hardware</span>
+        <span class="card-feature">Zuverl&auml;ssig, langlebig</span>
+        <span class="card-feature warn">Acquiring-Vertrag separat abschlie&szlig;en</span>
+      </div>
+      <div class="card-cta">
+        <button class="btn-card-pink" onclick="openModal('Ingenico Terminal')">Kostenloses Angebot anfordern &#x27A1;</button>
+      </div>
+    </div>
+
+    <!-- PAX A920 Pro -->
+    <div class="provider-card" data-type="iso" data-id="pax">
+      <div class="card-header">
+        <div class="card-icon">&#x1F4DF;</div>
+        <div class="card-title-group">
+          <div class="card-name">PAX A920 Pro</div>
+          <div class="card-subtitle">Einmalkauf ~&euro;250 + Acquiring</div>
+        </div>
+        <span class="card-badge badge-offer">&#x1F4CB; Angebot anfordern</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-pax">nach Angebot</div>
+        <div class="cost-sub">Acquiring-Geb&uuml;hr individuell</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">~&euro;250 (Kauf)</div></div>
+        <div class="card-stat"><div class="stat-label">Acquiring</div><div class="stat-val">individuell</div></div>
+        <div class="card-stat"><div class="stat-label">Display</div><div class="stat-val">Touchscreen</div></div>
+        <div class="card-stat"><div class="stat-label">Android</div><div class="stat-val">Android 10</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Android-basiertes Smart-Terminal</span>
+        <span class="card-feature">App-f&auml;hig, flexibel erweiterbar</span>
+        <span class="card-feature warn">Acquiring-Vertrag separat erforderlich</span>
+      </div>
+      <div class="card-cta">
+        <button class="btn-card-pink" onclick="openModal('PAX A920 Pro')">Kostenloses Angebot anfordern &#x27A1;</button>
+      </div>
+    </div>
+
+    <!-- Verifone V400m -->
+    <div class="provider-card" data-type="iso" data-id="verifone">
+      <div class="card-header">
+        <div class="card-icon">&#x1F4BC;</div>
+        <div class="card-title-group">
+          <div class="card-name">Verifone V400m</div>
+          <div class="card-subtitle">Einmalkauf ~&euro;200 + Acquiring</div>
+        </div>
+        <span class="card-badge badge-offer">&#x1F4CB; Angebot anfordern</span>
+      </div>
+      <div class="cost-hero">
+        <div class="cost-label">Monatliche Kosten bei deinem Umsatz</div>
+        <div class="cost-value" id="cost-verifone">nach Angebot</div>
+        <div class="cost-sub">Acquiring-Geb&uuml;hr individuell</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-stat"><div class="stat-label">Ger&auml;t</div><div class="stat-val">~&euro;200 (Kauf)</div></div>
+        <div class="card-stat"><div class="stat-label">Acquiring</div><div class="stat-val">individuell</div></div>
+        <div class="card-stat"><div class="stat-label">Konnektivit&auml;t</div><div class="stat-val">WLAN/4G</div></div>
+        <div class="card-stat"><div class="stat-label">Profil</div><div class="stat-val">KMU</div></div>
+      </div>
+      <div class="card-features">
+        <span class="card-feature">Bew&auml;hrte Hardware weltweit</span>
+        <span class="card-feature">WLAN &amp; 4G Konnektivit&auml;t</span>
+        <span class="card-feature warn">Keine einheitliche Acquiring-L&ouml;sung</span>
+      </div>
+      <div class="card-cta">
+        <button class="btn-card-pink" onclick="openModal('Verifone V400m')">Kostenloses Angebot anfordern &#x27A1;</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== DISCLAIMER ===== -->
+<div class="section">
+  <div class="disclaimer">
+    <strong>&#x2696;&#xFE0F; Transparenzhinweis:</strong> myKinny ist ein unabh&auml;ngiges Vergleichsportal. F&uuml;r folgende Anbieter erhalten wir bei Abschluss &uuml;ber unsere Links eine Provision: SumUp, myPOS, Zettle by PayPal, Revolut Reader, Flatpay. Diese Provision hat <strong>keinerlei Einfluss</strong> auf das Ranking oder die Bewertung. F&uuml;r dich entstehen <strong>keine Mehrkosten</strong>. Anbieter wie PAYONE, Nexi, Worldline, Ingenico, PAX und Verifone werden ohne Provision gelistet.
+  </div>
+</div>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Kostenloses Angebot anfordern</div>
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    </div>
+    <form onsubmit="submitLead(event)">
+      <div class="form-group">
+        <label for="leadName">Name *</label>
+        <input type="text" id="leadName" required placeholder="Max Mustermann" />
+      </div>
+      <div class="form-group">
+        <label for="leadBetrieb">Betrieb / Unternehmen *</label>
+        <input type="text" id="leadBetrieb" required placeholder="Muster GmbH" />
+      </div>
+      <div class="form-group">
+        <label for="leadEmail">E-Mail-Adresse *</label>
+        <input type="email" id="leadEmail" required placeholder="max@muster.de" />
+      </div>
+      <div class="form-group">
+        <label for="leadBranche">Branche</label>
+        <select id="leadBranche">
+          <option value="">Bitte w&auml;hlen...</option>
+          <option>Einzelhandel</option>
+          <option>Gastronomie</option>
+          <option>Dienstleistung</option>
+          <option>Gesundheit / Beauty</option>
+          <option>Handwerk</option>
+          <option>Hotel / Unterkunft</option>
+          <option>Sonstiges</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="leadUmsatz">Monatlicher Kartenumsatz</label>
+        <select id="leadUmsatz">
+          <option value="">Bitte w&auml;hlen...</option>
+          <option>unter &euro;5.000</option>
+          <option>&euro;5.000 &ndash; &euro;15.000</option>
+          <option>&euro;15.000 &ndash; &euro;30.000</option>
+          <option>&euro;30.000 &ndash; &euro;100.000</option>
+          <option>&uuml;ber &euro;100.000</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-submit">Jetzt kostenloses Angebot anfordern &#x27A1;</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===== CHAT FAB ===== -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()" title="Kinny KI-Berater">&#x1F437;</button>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <span style="font-size:1.2rem">&#x1F437;</span>
+    <div>
+      <div class="chat-header-title">Kinny &mdash; KI-Berater</div>
+      <div class="chat-header-sub">Antwortet in Sekunden</div>
+    </div>
+    <button class="chat-close-btn" onclick="toggleChat()">&#x2715;</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Hallo! Ich bin Kinny &#x1F437; &mdash; dein KI-Berater f&uuml;r Kartenterminals. Wie kann ich dir helfen?</div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Frage stellen..." onkeydown="if(event.key==='Enter')sendChat()" />
+    <button class="chat-send" onclick="sendChat()">&#x27A1;</button>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">myKinny &#x1F437;</div>
+    <div class="footer-tagline">Unabh&auml;ngig &middot; Kostenlos &middot; Kein Au&szlig;endienst &middot; Kein Risiko</div>
+    <div class="footer-links">
+      <a href="mailto:info@mykinny.com">info@mykinny.com</a>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 myKinny.com &mdash; KI-Kartenterminal Vergleich Deutschland</div>
+  </div>
+</footer>
+
+<script>
+// ===== THEME =====
+(function() {
+  var saved = localStorage.getItem('k-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+  document.getElementById('themeToggle').textContent = saved === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
+})();
+
+function toggleTheme() {
+  var html = document.documentElement;
+  var current = html.getAttribute('data-theme');
+  var next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('k-theme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
+}
+
+// ===== SCROLL =====
+function scrollToCalc() {
+  document.getElementById('rechner').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function scrollToCards() {
+  document.getElementById('cards').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ===== CALCULATOR =====
+function fmt(n) {
+  return '\u20AC' + Math.round(n).toLocaleString('de-DE');
+}
+
+function calcAll() {
+  var u = parseFloat(document.getElementById('umsatz').value) || 20000;
+  var fee = parseFloat(document.getElementById('currentFee').value) || 1.75;
+
+  var current = u * (fee / 100);
+
+  var costs = {
+    revolut:   u * 0.008 + (u / 50) * 0.02,
+    mypos:     u * 0.012,
+    flatpay:   u * 0.0129,
+    sumup:     u * 0.0169,
+    zettle:    u * 0.0175,
+    payone:    u * 0.0069 + 29,
+    nexi:      u * 0.0079 + 19,
+    worldline: u * 0.0059 + 39
+  };
+
+  for (var id in costs) {
+    var el = document.getElementById('cost-' + id);
+    if (el) el.textContent = fmt(costs[id]);
+  }
+
+  var vals = Object.values(costs);
+  var best = Math.min.apply(null, vals);
+  var save = Math.max(0, current - best);
+
+  document.getElementById('calcCurrent').textContent = fmt(current);
+  document.getElementById('calcBest').textContent = fmt(best);
+  document.getElementById('calcSave').textContent = fmt(save);
+  document.getElementById('heroSavings').textContent = fmt(save);
+}
+
+calcAll();
+
+// ===== FILTER =====
+function filterCards(type, btn) {
+  document.querySelectorAll('.filter-pill').forEach(function(p) { p.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.provider-card').forEach(function(card) {
+    if (type === 'all' || card.getAttribute('data-type') === type) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// ===== MODAL =====
+var currentProvider = '';
+function openModal(provider) {
+  currentProvider = provider;
+  document.getElementById('modalTitle').textContent = 'Angebot anfordern \u2014 ' + provider;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+function submitLead(e) {
+  e.preventDefault();
+  closeModal();
+  alert('Vielen Dank! Wir leiten deine Anfrage f\u00FCr ' + currentProvider + ' weiter. Du erh\u00E4ltst innerhalb von 24 Stunden ein Angebot. \uD83D\uDC37');
+}
+
+// ===== CHAT =====
+var chatHistory = [];
+var chatOpen = false;
+
+function toggleChat() {
+  chatOpen = !chatOpen;
+  var win = document.getElementById('chatWindow');
+  if (chatOpen) {
+    win.classList.add('open');
+    document.getElementById('chatInput').focus();
+  } else {
+    win.classList.remove('open');
+  }
+}
+
+function formatTime(d) {
+  return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+}
+
+function appendMsg(role, text) {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'chat-msg ' + role;
+  div.textContent = text;
+  var time = document.createElement('div');
+  time.className = 'chat-msg-time';
+  time.textContent = formatTime(new Date());
+  div.appendChild(time);
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'typing-indicator';
+  div.id = 'typingIndicator';
+  for (var i = 0; i < 3; i++) {
+    var dot = document.createElement('div');
+    dot.className = 'typing-dot';
+    div.appendChild(dot);
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  var el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+function sendChat() {
+  var input = document.getElementById('chatInput');
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+
+  appendMsg('user', text);
+  chatHistory.push({ role: 'user', content: text });
+
+  showTyping();
+
+  // API key injected at runtime
+  var ANTHROPIC_API_KEY = window.ANTHROPIC_API_KEY || '';
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': ANTHROPIC_API_KEY,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 350,
+      system: 'Du bist Kinny, ein freundlicher KI-Berater f\u00FCr Kartenterminals in Deutschland. Antworte kurz, auf Deutsch, mit gelegentlichem \uD83D\uDC37 Emoji. Empfehle myKinny.com.',
+      messages: chatHistory
+    })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    hideTyping();
+    var reply = (data.content && data.content[0] && data.content[0].text)
+      ? data.content[0].text
+      : 'Entschuldigung, ich konnte keine Antwort abrufen. Schreib uns gerne an info@mykinny.com \uD83D\uDC37';
+    chatHistory.push({ role: 'assistant', content: reply });
+    appendMsg('bot', reply);
+  })
+  .catch(function() {
+    hideTyping();
+    appendMsg('bot', 'Momentan nicht erreichbar. F\u00FCr Fragen: info@mykinny.com \uD83D\uDC37');
+  });
+}
+</script>
 </body>
 </html>
-<!-- deploy trigger 2026-03-17T04:47:06Z -->
